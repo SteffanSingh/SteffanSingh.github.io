@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /*  Edit z-index properties below */
+        
+    #one{
+      background: red;
+      top: 150px;
+      left: 300px;
+      z-index:2;
+    }
+    #two{
+      background: yellow;
+      top: 80px;
+      left: 150px;
+      z-index: 1;
+   }
+   #three{
+
+    margin-bottom: 200px;
+
+      background: blue;
+      z-index: -1;
+      position: relative;
+   }
+  #typography{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    
+     
+    position: relative;
+
+    
+   }
+   #flexbox{
+
+    position: relative;
+   }
+
+
+
+.container{
+
+display: grid;
+grid-gap: 20px;
+
+} 
+  
+  </style>
+</head>
+  <body>
+    
+
+
+    <div class="container">
+
+      <div id="one" class="box"> Box 1</div>
+    <div id = "two" class="box"> Box 2</div>
+    <div id="three" class="box"> Box 3</div><br>
+
+    </div>
+    
+<div>
+    
+    <p id="typography">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore fugiat suscipit vitae facere, sit nam labore, veritatis cum cupiditate expedita modi magni maiores distinctio rem reiciendis. Ipsam nobis sint tempore tenetur adipisci eius facere, ex magnam earum saepe illum quaerat nemo non sequi vel, odit voluptate eos aut corporis sunt dolores cupiditate eum temporibus! Facilis quae exercitationem corrupti ea voluptatum, eveniet magni velit consectetur earum, molestias ullam maiores culpa, perferendis ducimus repellat vero ad minima harum ipsam numquam deserunt! Adipisci, voluptate! Cum doloribus ea iste possimus, tempora numquam? Asperiores quos, voluptates ipsa minima quisquam eos aperiam est voluptatibus provident nulla, ullam sit repellendus aliquid adipisci fuga amet, inventore eum quidem odit doloribus harum aliquam iure! Dolore, sapiente illum. Magni fugit minus sit perferendis, eius dolor mollitia repellendus perspiciatis nesciunt pariatur iure. Assumenda, quis reiciendis iste quas excepturi obcaecati praesentium a voluptates tenetur quidem facilis cupiditate maiores nobis nisi dolorem? Optio, sed velit veniam temporibus voluptate nihil non? A atque, tempore, dicta, corporis ut ipsum doloribus cumque architecto provident itaque odit deleniti! Hic expedita nisi mollitia eius illum provident, harum saepe maxime magni odit iusto soluta commodi porro nostrum voluptas, itaque consectetur a incidunt exercitationem assumenda rem. Ex sequi reiciendis alias? </p>
+  
+</div>
+
+
+<div>
+<ins>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, ratione voluptates laudantium provident voluptate tenetur id doloribus voluptas dignissimos laborum?
+
+</ins>
+<br>
+
+<del>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, minima?
+
+</del>
+</div>
+
+
+
+
+<div id="flexbox">
+
+    <h1>Flexbox</h1>
+            <h4>justify-content for the main axis, whereas align-items for cross-axis</h4>
+                <ul>align-items:
+                    <li>stretch</li>
+                    <li>flex-start</li>
+                    <li>flex-end </li>
+                    <li>center</li>
+                </ul>
+                    <ul>
+                        To justify content on the main axis use justify-content, which has the possible values:
+                            <li>flex-end</li>
+                            <li>center</li>
+                            <li>space-around</li>
+                            <li>space-between</li>
+                            <li>space-evenly</li>
+
+
+
+
+                    </ul>
+</div>
+
+</body>
+</html>

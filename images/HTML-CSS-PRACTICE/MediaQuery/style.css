@@ -1,0 +1,108 @@
+body {
+background-color: #444;
+font-size: 25px;
+font-family: sans-serif;
+}
+
+.container{
+    display: grid;
+
+    height: 100%;
+
+    grid-template-columns: 850px;
+
+    grid-template-rows: 200px 1fr 1fr;
+
+    grid-template-areas: "hd"
+                        "sd"
+                        "main"
+                        "ft";
+    
+        border: 1px solid blueviolet;
+
+}
+
+
+.box{
+
+    border: 2px solid red;
+    background: #F8FA9D;
+
+}
+
+.header{
+    /*row-start column-start row-end column-end */
+    grid-area: hd;
+
+}
+
+.sidebar{
+    /*row-start column-start row-end column-end */
+    grid-area: sd;
+
+
+}
+
+.content{
+    /*row-start column-start row-end column-end */
+grid-area: main;
+ background-image: url("images/waterfall.jpeg");
+background-size: contain;
+background-repeat: no-repeat;  
+
+
+}
+
+.footer{
+    /*row-start column-start row-end column-end */
+grid-area: ft;
+
+}
+
+@media(min-width:600px) and (max-width:900px){
+    
+ body{
+        background-color: red;
+    }
+
+
+.container{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    grid-template-columns:   100px 300px 300px;
+
+    grid-template-rows: 200px 600px;
+    grid-template-areas: "hd hd hd hd hd hd hd hd"
+                        "sd sd  main main main main main main"
+                        "ft ft ft ft ft ft ft ft";
+    
+        border: 1px solid blueviolet;
+    }
+}
+
+
+
+@media(min-width:900px){
+    
+    body{
+           background-color: blue;
+       }
+   
+   
+   .container{
+       display: grid;
+       width: 90%;
+       margin: auto;
+       margin-top: auto;
+       grid-template-columns:  repeat(3, 200px);
+    grid-template-rows: 250px 600px;
+       grid-template-areas: "hd hd hd hd hd hd hd hd"
+                           "sd sd  main main main main main main"
+                           "ft ft ft ft ft ft ft ft";
+       
+           border: 1px solid aqua;
+           background-color: purple;
+       }
+   }

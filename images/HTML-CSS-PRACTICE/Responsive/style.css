@@ -1,0 +1,57 @@
+body {
+background-color: #444;
+font-size: 25px;
+font-family: sans-serif;
+}
+
+
+.container{
+display: grid;
+width: 90%;
+margin: auto;
+margin-top: 50px;
+grid-template-columns: 30x repeat(7, 1fr);
+grid-template-rows: 70px 400px 1fr;
+grid-template-areas: "hd hd hd hd hd hd hd hd"
+                    "sd main main main main main main main"
+                    "ft ft ft ft ft ft ft ft";
+
+    border: 1px solid blueviolet;
+}
+
+
+.box{
+
+    border: 2px solid red;
+    background: #F8FA9D;
+
+}
+
+.header{
+    /*row-start column-start row-end column-end */
+    grid-area: hd;
+
+}
+
+.sidebar{
+    /*row-start column-start row-end column-end */
+    grid-area: sd;
+
+
+}
+
+.content{
+    /*row-start column-start row-end column-end */
+grid-area: main;
+background-image: url("images/waterfall.jpeg");
+background-size: contain;
+background-repeat: no-repeat;
+
+
+}
+
+.footer{
+    /*row-start column-start row-end column-end */
+grid-area: ft;
+
+}

@@ -1,0 +1,75 @@
+
+.header{
+    width: 100%;
+      height: auto;
+      gap: 0px;
+      opacity: 0px;
+      background-color: lightblue;
+      position: relative;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+}
+
+
+.logo a{
+     display: block;
+     text-decoration: none;
+     width: 100%;
+    color: rgb(30, 212, 17);
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+ /* li{
+    margin-right: 50px;
+    font-family: Source Sans Pro;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: center;
+    color: #1044FF;
+
+
+} */
+
+#blog{
+    font-weight: 700;
+    
+}
+
+
+#signup{
+    color: white;
+    width: 100%;
+height: auto;
+font-size: 1.2em;
+ padding: 10px;
+gap: 0px;
+border-radius: 10px 10px 10px 10px;
+opacity: 0px;
+background: #1044FF;
+color: rgb(75, 30, 30);
+ 
+}
+
+
+.name{
+    font-family: Noticia Text;
+font-size: 50px;
+font-weight: 700;
+line-height: 80px;
+ 
+color: #1044FF;
+text-align: center;
+ 
+}
+#personal{
+    font-family: Source Sans Pro;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.1em;
+text-align: center;
+color: #1044FF;
+}

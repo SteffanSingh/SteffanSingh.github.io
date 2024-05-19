@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+        margin: 20px;
+        background-color:brown;
+        color:white;
+          display: inline-block;  
+         /*display: block; */ 
+         /* display: inline;  */
+        line-height: 20px;
+      }
+       
+.box1 {
+  width: 200px;
+   height: 200px;
+  position: absolute;
+}
+
+#one {
+  background: red;
+  top: 100px;
+  left: 150px;
+  z-index:1;
+}
+
+#two {
+    
+  background: yellow;
+  top: 80px;
+  left: 100px;
+  z-index:-1;
+
+}
+ 
+
+      </style>
+</head>
+<body>
+    
+     
+        <div id="one" class ="box1"> Box One </div>
+        <div id="two" class ="box1"> Box Two </div>
+       
+
+    <div class="box">Kapoor</div>
+    <div class="box">Ashutosh</div>
+    <div class="box">Samrat</div>
+    <div class="box">Steffan</div>
+    <div class="box">Lionchild</div>
+ 
+</body>
+</html>

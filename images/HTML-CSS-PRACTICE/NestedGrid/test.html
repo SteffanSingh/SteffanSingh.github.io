@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieWeb App</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" rel="stylesheet">
+
+    <style>
+        h1 {
+            margin-top: 0;
+            font-size: 40px;
+            text-align: center;
+            color: #dc3545;
+        }
+
+        h1:hover {
+            color: Purple;
+            cursor: pointer;
+        }
+
+        svg:hover {
+            color: magenta;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #star-blink {
+            animation: 10s;
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body style="background-color:#ADD8E6; color: #333;   ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand bg-info" href="/" style="margin-bottom:20px; margin-left:20px; color:yellow;
+        border:none; border-radius:10px; padding:5px;">
+            <svg class="bi bi-person" fill="currentColor" height="25" viewBox="0 0 16 16" width="25"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+            </svg>
+        </a>
+
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <h1 style="margin-left:450px;">MovieStar
+                        <svg class="bi bi-star-fill" fill="currentColor" height="30" viewBox="0 0 16 16" width="30"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </h1>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+    <h2 style="text-align:center">Review Page</h2>
+
+    <div style="display:flex; ">
+        <ul style="display:flex;flex-wrap: wrap;">
+
+
+            <div class="movie-box" style="width: 18rem;">
+                <div>
+
+                    <li>
+
+
+
+
+                        <div class="card" style="width: 18rem;">
+                            {% if movie.note %}
+
+                            <img src="{{movie.poster}}" title="{{movie.note}}" style="cursor:pointer;"
+                                class="card-img-top" alt="" width="240px" height="310px" />
+
+                            {% endif %}
+
+                            {% if not movie.note %}
+                            <img src="{{movie.poster}}" style="cursor:pointer;" class="card-img-top" alt=""
+                                width="240px" height="310px">
+
+                            {% endif %}
+
+                            <div class="card-body">
+
+                                <span> <em><strong>{{movie.movie_name}}</strong> </em> </span><br>
+                                <span> Year: {{movie.year }}, </span>
+                                <span> Rating: {{movie.rating }} </span><br><br>
+                                <div style="display: flex; justify-content: space-evenly;">
+                                    <form action="/users/{{review_dict.user_id}}/update_movie/{{movie.movie_id}}">
+                                        <input type="submit" style="background-color: #28a745;
+                                color: #fff; border: none;padding:10px;
+                                 border-radius: 5px;
+                                 cursor: pointer;
+                                 transition: background-color 0.3s, color 0.3s;" value="Edit">
+                                    </form>
+                                    <form action="/users/{{review_dict.user_id}}/delete_movie/{{movie.movie_id}}">
+                                        <input type="submit" style="background-color: #dc3545;
+                                 color: #fff; border: none;
+                                 border-radius: 5px;
+                                  cursor: pointer;padding:10px;
+                                 transition: background-color 0.3s, color 0.3s;" value="Del">
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </li>
+                </div>
+            </div>
+
+
+        </ul>
+
+
+        <div style="display:flex; justify-content:center; ">
+
+            <div style="margin-right:30px; ">
+
+                <form action="/add_review/{{review_dict.user_id}}/{{movie.movie_id}}" method="POST">
+                    <div class="  bg-light" style="display:flex;margin-left:20px;
+         justify-content:center;flex-direction:column; ">
+
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" role="alert" id="star-blink">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+
+                        <label style="margin-top:20px;">Write your Review:</label>
+
+                        <textarea style="margin-top:20px;
+
+                        rows=" 10" cols="40" placeholder="Enter your review" name="review"></textarea>
+
+                        <label style="margin-top:20px;">Enter your rating:</label>
+
+                        <input name="rating" type="number" step="0.1" placeholder="Enter your rating"
+                            style="margin-top:10px;">
+
+                        <input style="margin-bottom:40px;margin-top:40px;
+                  margin-left:20px;color:blue;background-color:light blue; border-radius:10px;cursor:pointer;
+                  padding:10px;" type="Submit" value="Add Review">
+
+                    </div>
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div class="review">
+            {% if reviews %}
+            {% for index in range(reviews|length) %}
+            {% set review = reviews[index] %}
+            <p style="font-size:20px;color:lime blue;">{{ index + 1 }}. {{ review.review_text }}</p>
+            <h4 style="font-size:20px;color:red;margin-left:50px;"> {{review.rating}}* </h4>
+
+            <div style="display:flex; justify-content:center;">
+                <form action="/review/{{review.review_id}}">
+                    <input style="margin-bottom:5px; cursor:pointer; margin-left:20px; color:red;
+            border-radius:10px; padding:5px;" type="Submit" value="Delete Review">
+                </form>
+
+                <form action="/update/{{review.review_id}}">
+                    <input style="margin-bottom:5px; cursor:pointer;
+                    margin-left:20px; color:Magenta; border-radius:10px; padding:5px;" type="Submit"
+                        value="Update Review">
+                </form>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <div style="display:flex;   ">
+
+
+
+
+
+
+        <button style="margin-bottom: 20px; margin-left: 20px;
+        color: red; border-radius: 10px; padding: 10px; text-decoration: none;
+         background-color: lime blue;  ; cursor: pointer;">
+            <a href="/users/{{review_dict.user_id}}" style="text-decoration: none; color: inherit;">Back to Favourite
+                Movies</a>
+        </button>
+
+        <a id="login" href="/logout" style="margin-bottom: 20px;
+        margin-left: 20px; color: red;
+        background-color: #ff69b4; border: 2px solid #ff69b4;
+         border-radius: 5px; padding: 10px; cursor: pointer;
+          transition: background-color 0.3s, border-color 0.3s;">Sign out </a>
+    </div>
+
+</body>
+
+</html>

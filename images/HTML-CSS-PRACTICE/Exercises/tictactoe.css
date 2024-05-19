@@ -1,0 +1,27 @@
+/* Add CSS rules here! */
+
+li{
+    width:80px;
+    height:80px;
+    background-color: lightblue;
+    padding: 30px;
+    
+    margin: 10px;
+    font-weight: bold;
+     line-height: 70px;
+    font-size: 100px;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+ul{
+    
+    display: flex;
+    flex-wrap: wrap;
+     
+}
+
+.container{
+    display: flex;
+    background-color: white;
+}

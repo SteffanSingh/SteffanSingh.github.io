@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>grid1</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+
+            font-size: 27px;
+
+        }
+        /*  Edit z-index properties below */
+     
+  #typography{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    
+     
+    position: relative;
+
+    
+   }
+   #flexbox{
+
+    
+   }
+
+
+
+ 
+   .container {
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas: 
+      "hd hd hd hd hd hd hd hd"
+      "sd main main main main main main main"
+      "ft ft ft ft ft ft ft ft";
+  }
+
+  
+.box{
+             
+            padding: 20px;
+            border: 5px solid rgb(108, 8, 41);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+        }
+#header{
+      grid-area: hd;
+    }
+    #sidebar{
+       grid-area:sd  ;
+   }
+   #content{
+
+    grid-area: main ;
+   }
+   #footer{
+
+        grid-area: ft ;
+}
+
+  </style>
+</head>
+  <body>
+    
+
+
+    <div class="container">
+
+    <div id="header" class="box"> header</div>
+    <div id = "sidebar" class="box"> sidebar</div>
+    <div id="content" class="box"> content</div> 
+    <div id="footer" class="box"> footer</div> 
+
+    </div>
+    
+ 
+
+
+
+
+ 
+
+</body>
+</html>
